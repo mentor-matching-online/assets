@@ -63,24 +63,24 @@ $html--background-color: color("orange");
 $body--background-color: color("white");
 
 // Header and footer colors
-$header--background-color: color("orange");
-$header--logotype-color: color("white");
+$header--background-color: color("black");
+$header--logotype-color: color("orange");
 $header--text-color: color("white");
 $header--nav-item-border-color: color("gray");
 $header--link-active: color("orange");
-$header--button--text-color: color("blue");
+$header--button--text-color: color("black");
 $header--button--background: color("orange");
 
-$footer--background-color: color("orange");
-$footer--text-color: color("white");
-$footer--wordmark--text-color: color("white");
-$footer--border-color: color("white");
-$footer--link-color: color("white");
-$footer--link-color--visited: color("gray");
-$footer--link-color--hover: color("orange");
-$footer--link-color--focus: color("white");
+$footer--background-color: color("light-gray");
+$footer--text-color: color("black");
+$footer--wordmark--text-color: color("black");
+$footer--border-color: color("black");
+$footer--link-color: color("black");
+$footer--link-color--visited: color("dark-gray");
+$footer--link-color--hover: color("dark-gray");
+$footer--link-color--focus: color("black");
 $footer--link-background--focus: color("yellow");
-$footer--link-color--active: color("teal");
+$footer--link-color--active: color("orange");
 
 $toolbar--background-color: color("orange");
 
