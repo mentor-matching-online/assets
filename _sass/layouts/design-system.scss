@@ -1,0 +1,17 @@
+.page--header--design-system {
+
+}
+
+.design-system--navigation,
+.design-system--article {
+	padding: spacing(5) 0;
+	margin-bottom: 0 !important;
+}
+
+.design-system--navigation {
+	border-top: 3px solid color("orange");
+}
+
+.design-system--article {
+	border-top: 3px solid color("gray");
+}

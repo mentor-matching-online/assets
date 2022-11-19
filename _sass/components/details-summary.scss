@@ -1,0 +1,132 @@
+details > summary {
+
+	@include font($size: 24, $weight: bold);
+
+	margin-top: 0; // Override browser default
+	margin-bottom: 0; // Override browser default
+
+	position: relative;
+	cursor: pointer;
+
+	color: color("black");
+
+	/* Hide the marker completely. */
+	list-style-image: none;
+	&::marker,
+	&::-webkit-details-marker {
+		display: none;
+		list-style-image: none;
+		content: '';
+		width: 0;
+		height: 0;
+	}
+
+	&:after {
+		display: block;
+		position: relative;
+		padding: spacing(2) 0 0;
+		bottom: 0;
+		left: 0;
+		content: 'Show more';
+		@include media-query($media-type: print) {
+			content: '';
+		}
+		@include font($size: 19, $line-height: 24, $weight: bold);
+
+		color: $link-color;
+		text-align: left;
+		font-weight: bold;
+
+	}
+
+	&:hover {
+		text-decoration: underline !important;
+		cursor: pointer;
+	}
+	&:focus {
+		color: $link-color--focus;
+		background: $link-background--focus;
+		outline: 3px solid $link-background--focus;
+		&:after {
+			color: color("black");
+		}
+	}
+	&:active {
+		background: transparent;
+		outline: 3px solid $link-background--focus;
+		&:after {
+			color: color("black");
+		}
+	}
+
+}
+
+details {
+
+	@include responsive-padding(2, "top");
+	@include responsive-padding(2, "bottom");
+
+	@include font($size: 19);
+	color: $text-color;
+
+	display: block;
+
+	border-top: 1px solid $border-color;
+	border-bottom: 1px solid $border-color;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+}
+
+details[open] > summary {
+	@include responsive-margin(3, "bottom");
+
+	&::-webkit-details-marker,
+	&::marker {
+		display: none;
+		list-style-image: none;
+		content: '';
+	}
+
+	&:after {
+		content: 'Show less';
+		@include media-query($media-type: print) {
+			content: '';
+		}
+	}
+}
+
+details + details {
+	border-top: none;
+}
+
+details > details {
+	margin-left: $gutter;
+}
+
+details[open] > details:last-child {
+	@include responsive-margin(5, "bottom")
+}
+
+details[open] > details > summary {
+	@include font($size: 19, $weight: bold);
+
+}
+
+details + h1,
+details + h2,
+details + h3,
+details + h4 {
+	@include responsive-margin(9, "top");
+}
+
+p + details,
+ul + details {
+	@include responsive-margin(6, "top");
+}
+
+details.spacing-bottom {
+	margin-bottom: spacing(9);
+}
