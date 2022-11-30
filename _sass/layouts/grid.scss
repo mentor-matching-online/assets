@@ -31,6 +31,14 @@
 	}
 }
 
+.header-wrapper {
+	@include header-wrapper;
+
+	@include media-query($media-type: print) {
+		padding: 0;
+	}
+}
+
 // Using the `.main-wrapper--auto-spacing` modifier should apply the
 // correct spacing depending on whether there are any elements
 // (such the back link, breadcrumbs or phase banner components) before the

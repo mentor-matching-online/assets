@@ -48,6 +48,12 @@ p {
 	@extend %body-lg;
 }
 
+.focus-header--lead {
+	@extend %body-xl;
+	color: color("off-white");
+	max-width: 45ch;
+}
+
 .small {
 	@extend %body-sm;
 }

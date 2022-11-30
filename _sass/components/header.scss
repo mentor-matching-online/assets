@@ -134,7 +134,7 @@
 	&:link,
 	&:visited,
 	&:active {
-	  text-decoration: none;
+	  text-decoration: none !important;
 	}
 
 	// Remove any borders that show when focused and hovered.
@@ -165,6 +165,10 @@
 		text-decoration: underline;
 		text-decoration-thickness: $header-link-underline-thickness;
 		text-underline-offset: spacing(1);
+	}
+	
+	&:active {
+		color: $header--link-active;
 	}
 
 	&:focus {

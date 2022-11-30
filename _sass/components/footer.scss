@@ -20,13 +20,22 @@ footer a,
 .footer--link {
 	@include typography-common;
 	@extend %body-sm;
-
-	text-decoration: none;
+	
+	&:link,
+	&:visited {
+		color: $footer--link-color;
+		text-decoration: none;
+	}
 
 	&:hover {
+		color: $footer--link-color--hover;
 	  text-decoration: underline;
 	  text-decoration-thickness: 3px;
 	  text-underline-offset: spacing(1);
+	}
+	
+	&:active {
+		color: $footer--link-color--active;
 	}
 
 	&:focus {
@@ -61,7 +70,7 @@ footer a,
 
 .footer--heading {
 	@extend %heading-sm;
-	color: $footer--text-color;
+	color: $footer--heading--text-color;
 	@include responsive-margin(4, "bottom");
 	padding-top: spacing(3);
 	border-top: 3px solid $footer--border-color;

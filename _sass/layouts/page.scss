@@ -8,9 +8,14 @@
 		height:99%;
 		page-break-before: always;
 		page-break-after: always;
-		background: color("orange");
+		background: color("deep-purple");
 		box-sizing: border-box;
 	}
+}
+
+.page--focus-header {
+	@include clearfix;
+	background: color("deep-purple");
 }
 
 .page--divider {
@@ -24,8 +29,8 @@
 		height:99%;
 		page-break-before: always;
 		page-break-after: always;
-		background: color("orange");
-		color: color("blue");
+		background: color("deep-purple");
+		color: color("deep-purple");
 		box-sizing: border-box;
 
 		&:before {
@@ -39,7 +44,7 @@
 			content: "Mentor Matching \A Online.";
 			white-space:pre;
 
-			color: color("orange") !important;
+			color: color("deep-purple") !important;
 		}
 	}
 }
@@ -61,7 +66,7 @@
 			content: "Mentor Matching \A Online.";
 			white-space:pre;
 
-			color: color("orange") !important;
+			color: color("deep-purple") !important;
 		}
 	}
 
@@ -106,7 +111,7 @@
 	@include responsive-padding(3, "top");
 	@include responsive-margin(7, "bottom");
 
-	border-top: 3px solid color("light-gray");
+	border-top: 3px solid color("gray-5");
 	@include media-query($media-type: print) {
 		border-top: none;
 	}
@@ -186,11 +191,11 @@
 }
 
 .page--content {
-	border-top: 3px solid color("light-gray");
+	border-top: 3px solid color("gray-5");
 }
 
 .page--aside {
-	border-top: 3px solid color("orange");
+	border-top: 3px solid color("deep-purple");
 	@include media-query($media-type: print) {
 		display: none;
 	}

@@ -115,3 +115,20 @@
 	min-height: 50vh;
   }
 }
+
+@mixin header-wrapper {
+	// In IE11 the `main` element can be used, but is not recognized  –
+	// meaning it's not defined in IE's default style sheet,
+	// so it uses CSS initial value, which is inline.
+	display: block;
+	padding-top: spacing(4);
+	padding-bottom: spacing(4);
+
+	@include media-query($from: tablet) {
+	// This spacing is manually adjusted to replicate the margin of
+	// heading-xl (50px) minus the spacing of back link and
+	// breadcrumbs (10px)
+	padding-top: spacing(7);
+	padding-bottom: spacing(7);
+	}
+}

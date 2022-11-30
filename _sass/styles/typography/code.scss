@@ -9,12 +9,12 @@ pre {
   @include responsive-margin(4, "bottom");
   @include responsive-padding(2);
 
-  background: color("light-gray");
+  background: color("gray-5");
 }
 
 kbd,
 code {
-	color: color("blue");
+	color: color("deep-purple");
 	@include font($size: 16);
 
 	margin-top: 0;

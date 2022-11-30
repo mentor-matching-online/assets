@@ -1,17 +1,17 @@
 // Headings
 
 %heading-xxl {
-	color: $text-color;
+	color: $heading-color;
 	@include font($size: 60, $weight: bold);
 
 	display: block;
 
-	margin-top: 0;
+	@include responsive-margin(10, "top");
 	@include responsive-margin(8, "bottom");
 }
 
 %heading-xl {
-	color: $text-color;
+	color: $heading-color;
 	@include font($size: 48, $weight: bold);
 
 	display: block;
@@ -21,7 +21,7 @@
 }
 
 %heading-lg {
-	color: $text-color;
+	color: $heading-color;
 	@include font($size: 36, $weight: bold);
 
 	display: block;
@@ -31,7 +31,7 @@
 }
 
 %heading-md {
-	color: $text-color;
+	color: $heading-color;
 	@include font($size: 24, $weight: bold);
 
 	display: block;
@@ -41,7 +41,7 @@
 }
 
 %heading-sm {
-	color: $text-color;
+	color: $heading-color;
 	@include font($size: 19, $weight: bold);
 
 	display: block;
@@ -53,6 +53,16 @@
 h1,
 .heading-xl {
 	@extend %heading-xl;
+}
+
+.heading-xxl {
+	@extend %heading-xxl;
+}
+
+.focus-header--heading-xxl {
+	@extend %heading-xxl;
+	color: color("off-white");
+	max-width: 25ch;
 }
 
 h2,
@@ -68,6 +78,11 @@ h3,
 h4,
 .heading-sm {
 	@extend %heading-sm;
+}
+
+.with-border {
+	@include responsive-padding(3, top);
+	border-top: 5px solid color("deep-purple");
 }
 
 // Captions to be used inside headings
