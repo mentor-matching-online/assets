@@ -1,0 +1,240 @@
+
+.pagination {
+	@include responsive-margin(6, "bottom");
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-wrap: wrap;
+
+	@include media-query($from: tablet) {
+		flex-direction: row;
+		align-items: flex-start;
+	}
+}
+
+.pagination--list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.pagination--item,
+.pagination--next,
+.pagination--prev {
+	@include font(19);
+	box-sizing: border-box;
+	position: relative;
+	min-width: 45px;
+	min-height: 45px;
+	padding: spacing(2) spacing(3);
+	float: left; // Float is ignored if flex is active for prev/next links
+
+	&:hover {
+		background-color: color("gray-4");
+	}
+}
+
+.pagination--item {
+	// Hide items on small screens except the prev/next items,
+	// non-link items and the first and last items
+	display: none;
+
+	// Center align pagination links in their parent list item so that they
+	// visually sit in the middle of their touch area
+	text-align: center;
+
+	@include media-query($from: tablet) {
+		display: block;
+	}
+}
+
+.pagination--prev,
+.pagination--next {
+	@extend %bold;
+
+	// Use flex to get around a whitespace issue between the arrow svg and the link text
+	// without having to rely on whitespace control from backend tooling
+	.pagination--link {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.pagination--prev {
+	padding-left: 0;
+}
+
+.pagination--next {
+	padding-right: 0;
+}
+
+// Only show first, last and non-link items on mobile
+.pagination--item--current,
+.pagination--item--ellipses,
+.pagination--item:first-child,
+.pagination--item:last-child {
+	display: block;
+}
+
+.pagination--item--current {
+	@extend %bold;
+	outline: 1px solid transparent;
+	background-color: $link-color;
+
+	&:hover {
+		background-color: $link-color;
+	}
+
+	.pagination--link {
+		@include link-style-inverse;
+	}
+}
+
+.pagination--item--ellipses {
+	@extend %bold;
+	color: $secondary-text-color;
+
+	// Remove hover state for ellipsis items as they don't have links within them
+	&:hover {
+		background-color: transparent;
+	}
+}
+
+.pagination--link {
+	display: block;
+	min-width: spacing(3);
+
+	// Increase the touch area for the link to the parent element.
+	@media screen {
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+	}
+
+	// Add link hover decoration to prev/next text if no label present on prev/next only mode
+	// We do this so that we have a hover state in all possible instances
+	&:hover,
+	&:active {
+		.pagination--link-title--decorated {
+			@include link-decoration;
+		}
+
+		.pagination--link-label,
+		.pagination--link-title--decorated {
+			@include link-hover-decoration;
+		}
+	}
+
+	&:focus {
+		.pagination--icon {
+			color: $focus-text-color;
+		}
+
+		.pagination--link-label {
+			text-decoration: none;
+		}
+
+		.pagination--link-title--decorated {
+			text-decoration: none;
+		}
+	}
+}
+
+.pagination--link-title {
+	@extend %bold;
+}
+
+.pagination--link-label {
+	@include font($size: 19, $weight: "regular");
+	@include link-decoration;
+	display: inline-block;
+	padding-left: spacing(6);
+}
+
+.pagination--icon {
+	// Set size using rems to make the icon scale with text if user resizes text in their browser
+	width: px-to-rem(15px);
+	height: px-to-rem(13px);
+	color: $secondary-text-color;
+	fill: currentcolor;
+	forced-color-adjust: auto;
+}
+
+.pagination--icon--prev {
+	margin-right: spacing(3);
+}
+
+.pagination--icon--next {
+	margin-left: spacing(3);
+}
+
+// Block mode - position previous and next links above and below numbers
+.pagination--block {
+	display: block;
+
+	.pagination--item {
+		padding: spacing(3);
+		float: none;
+	}
+
+	.pagination--next,
+	.pagination--prev {
+		padding-left: 0;
+		float: none;
+	}
+
+	.pagination--next {
+		padding-right: spacing(3);
+
+		.pagination--icon {
+			margin-left: 0;
+		}
+	}
+
+	// Only apply a border between prev and next if both are present
+	.pagination--prev + .pagination--next {
+		border-top: 1px solid $border-color;
+	}
+
+	// Reset both these elements to their inline default, both to ensure that the focus state
+	// for block mode "shrink wraps" text as expected
+	.pagination--link,
+	.pagination--link-title {
+		display: inline;
+	}
+
+	// Set the after pseudo element to a block which makes the title visually display
+	// as block level whilst programmatically being inline
+	// We do this to get around an NVDA quirk where adjacent block level
+	// elements are always read out separately
+	.pagination--link-title:after {
+		content: "";
+		display: block;
+	}
+
+	.pagination--link {
+		text-align: left;
+
+		&:focus {
+			// apply focus styling to the label within the link as if it were being focused
+			// to get around a display issue with a focusable inline element containing a mixture
+			// of inline and inline-block level elements
+			.pagination--link-label {
+				@include focused-text;
+			}
+		}
+
+		&:not(:focus) {
+			text-decoration: none;
+		}
+	}
+
+	.pagination--icon {
+		margin-right: spacing(2);
+	}
+}
