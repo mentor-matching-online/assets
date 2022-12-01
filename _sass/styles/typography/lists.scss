@@ -27,6 +27,67 @@
 	list-style-type: none;
 }
 
+%list--step-by-step {
+	margin: 0;
+	padding: 0;
+	
+	padding-left: spacing(3);
+	@include media-query($from: tablet) {		
+		padding-left: spacing(5);
+	}
+	
+	list-style: none;
+	
+	counter-reset: stepbystep;
+}
+
+%list--step-by-step--item {
+	box-sizing: content-box;
+	border-left: 3px solid color("gray-4");
+	
+	padding-left: spacing(8);
+	@include media-query($from: tablet) {		
+		padding-left: spacing(10);
+	}
+	
+	padding-bottom: spacing(7);
+	margin-bottom: 0;
+}
+
+%list--step-by-step--item--last {
+	border-left: none;
+	@include media-query($from: tablet) {		
+		padding-left: spacing(10) +  3px;
+	}
+}
+
+%list--step-by-step--item--before {
+	counter-increment: stepbystep;
+	content: attr(data-order);
+	
+	display: block;
+	float: left;
+	
+	@extend %heading-md;
+	
+	/* Add to li::before rule */
+	text-align: center;
+	border-radius: 100%;
+	
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+	
+	margin-left: -#{spacing(8) + spacing(4)};
+	
+	@include media-query($from: tablet) {		
+		width: 45px;
+		height: 45px;
+		line-height: 45px;
+		margin-left: -#{spacing(10) + spacing(5)};
+	}
+}
+
 ul,
 ol {
 	@extend %list;
@@ -49,6 +110,32 @@ ul.list--no-styles,
 ol.list--no-styles {
 	@extend %list;
 	@extend %list--no-styles;
+}
+
+ol.list--step-by-step {
+	@extend %list--step-by-step;
+}
+
+ol.list--step-by-step li {
+	@extend %list--step-by-step--item;
+}
+
+ol.list--step-by-step li:last-of-type {
+	@extend %list--step-by-step--item--last;
+}
+
+ol.list--step-by-step li::before {
+	@extend %list--step-by-step--item--before;
+}
+
+ol.list--step-by-step li.step-by-step--and::before {
+	color: color("deep-purple");
+	background-color: color("bright-purple-10");
+}
+
+ol.list--step-by-step li.step-by-step--number::before {
+	color: color("off-white");
+	background-color: color("deep-purple");
 }
 
 .list--category {
