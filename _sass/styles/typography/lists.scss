@@ -45,9 +45,9 @@
 	box-sizing: content-box;
 	border-left: 3px solid color("gray-4");
 	
-	padding-left: spacing(8);
+	padding-left: spacing(8) + 1px;
 	@include media-query($from: tablet) {		
-		padding-left: spacing(10);
+		padding-left: spacing(10) + 1px;
 	}
 	
 	padding-bottom: spacing(7);
@@ -56,9 +56,9 @@
 
 %list--step-by-step--item--last {
 	border-left: none;
-	padding-left: spacing(8) +  3px;
+	padding-left: spacing(8) +  4px;
 	@include media-query($from: tablet) {		
-		padding-left: spacing(10) +  3px;
+		padding-left: spacing(10) + 5px;
 	}
 }
 

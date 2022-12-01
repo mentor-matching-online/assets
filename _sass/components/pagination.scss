@@ -197,7 +197,9 @@
 	}
 
 	// Only apply a border between prev and next if both are present
-	.pagination--prev + .pagination--next {
+	.pagination--prev + .pagination--next,
+	.pagination--prev + .pagination--prev,
+	.pagination--next + .pagination--next {
 		border-top: 1px solid $border-color;
 	}
 
