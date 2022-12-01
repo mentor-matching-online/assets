@@ -7,19 +7,8 @@ img {
     margin: spacing(5) 0;
 }
 
-.hero-image,
-.hero-video {
-    aspect-ratio: 2 / 1;
-    object-fit: cover;
-    object-position: 50% 50%;
-    margin-top: 0;
-}
-
-.topic--banner--image {
-    aspect-ratio: 4/1;
-    @include media-query($until: tablet) {
-        aspect-ratio: 2/1;
-    }
-    object-fit: cover;
-    object-position: 50% 50%;
+img.person {
+    border-radius: 100%;
+    padding: 0;
+    margin: 0;
 }
