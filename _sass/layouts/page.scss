@@ -107,101 +107,17 @@
 	}
 }
 
-.page--meta-info {
-	@include responsive-padding(3, "top");
-	@include responsive-margin(7, "bottom");
-
-	border-top: 3px solid color("gray-5");
-	@include media-query($media-type: print) {
-		border-top: none;
-	}
-	@include clearfix();
-}
-
-.page--meta-info--list {
-	@include clearfix();
-}
-
-.page--meta-info--list--with-image {
-	display: inline-block;
-}
-
-.page--meta-info--term,
-.page--meta-info--definition {
-	position: relative;
-	margin-bottom: spacing(1);
-	@include media-query($from: tablet) {
-		display: inline-block;
-		float: left;
-		min-width: 10ch;
-		margin-bottom: spacing(1);
-	}
-}
-
-.page--meta-info--term {
-	@include media-query($from: tablet) {
-		margin-right: spacing(5);
-		clear: left;
-	}
-
-	@include media-query($media-type: print) {
-		display: none;
-	}
-}
-
-.page--meta-info--definition {
-	@include media-query($until: tablet) {
-		margin-bottom: spacing(3);
-	}
-	@include media-query($from: tablet) {
-		clear: right;
-	}
-	@include media-query($media-type: print) {
-		color: color("white");
-		font-weight: bold;
-		max-width: 40ch;
-	}
-}
-
-.volunteer--author {
-	float: left;
-	box-sizing: border-box;
-	margin: 0 spacing(5) 0 0;
-}
-
-.page--meta-info--team-member {
-
-	@include media-query($media-type: print) {
-
-		a[href^="/"],
-		a[href^="http://"],
-		a[href^="https://"] {
-			&:after {
-				content: "";
-			}
-		}
-
-		a:link,
-		a:visited {
-			color: color("white");
-		}
-
-	}
-
-}
-
 .page--content {
 	border-top: 3px solid color("gray-5");
+	padding: spacing(5) 0;
 }
 
 .page--aside {
 	border-top: 3px solid color("deep-purple");
+	border-bottom: 3px solid color("deep-purple");
+	padding: spacing(5) 0 spacing(2);
+	
 	@include media-query($media-type: print) {
 		display: none;
 	}
-}
-
-.page--content,
-.page--aside {
-	padding: spacing(5) 0;
 }
