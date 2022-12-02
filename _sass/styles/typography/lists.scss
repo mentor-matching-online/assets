@@ -43,7 +43,7 @@
 
 %list--step-by-step--item {
 	box-sizing: content-box;
-	border-left: 3px solid color("gray-4");
+	border-left: 3px solid $border-color;
 	
 	padding-left: spacing(8) + 1px;
 	@include media-query($from: tablet) {		
