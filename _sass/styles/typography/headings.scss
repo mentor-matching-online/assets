@@ -27,7 +27,7 @@
 	display: block;
 
 	margin-top: 0;
-	@include responsive-margin(6, "bottom");
+	@include responsive-margin(2, "bottom");
 }
 
 %heading-md {
@@ -37,7 +37,7 @@
 	display: block;
 
 	margin-top: 0;
-	@include responsive-margin(4, "bottom");
+	@include responsive-margin(2, "bottom");
 }
 
 %heading-sm {
