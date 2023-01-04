@@ -160,13 +160,17 @@ $toolbar--background-color: color("deep-purple");
 // Text colors
 $text-color: color("black");
 $secondary-text-color: color("gray-1");
-$heading-color: color("deep-purple");
+$heading-xl-color: color("deep-purple");
+$heading-lg-color: color("purple");
+$heading-md-color: color("deep-purple");
+$heading-sm-color: color("deep-purple--light");
+$heading-color: $heading-xl-color;
 
 // Link colors
-$link-color: color("bright-purple");
+$link-color: color("link");
 $link-color--inverse: color("white");
-$link-color--visited: color("purple");
-$link-color--hover: color("deep-purple");
+$link-color--visited: color("link-visited");
+$link-color--hover: color("link-hover");
 $link-color--focus: color("black");
 $link-background--focus: color("vibrant-yellow");
 $link-color--active: color("deep-purple");

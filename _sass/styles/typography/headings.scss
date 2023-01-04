@@ -11,7 +11,7 @@
 }
 
 %heading-xl {
-	color: $heading-color;
+	color: $heading-xl-color;
 	@include font($size: 48, $weight: bold);
 
 	display: block;
@@ -21,7 +21,7 @@
 }
 
 %heading-lg {
-	color: $heading-color;
+	color: $heading-lg-color;
 	@include font($size: 27, $weight: bold);
 
 	display: block;
@@ -31,7 +31,7 @@
 }
 
 %heading-md {
-	color: $heading-color;
+	color: $heading-md-color;
 	@include font($size: 24, $weight: bold);
 
 	display: block;
@@ -41,7 +41,7 @@
 }
 
 %heading-sm {
-	color: $heading-color;
+	color: $heading-sm-color;
 	@include font($size: 19, $weight: bold);
 
 	display: block;
