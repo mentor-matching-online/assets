@@ -3,7 +3,7 @@
 @function _equilateral-height($base) {
   $square-root-of-three: 1.732;
 
-  @return ($base / 2) * $square-root-of-three;
+  @return ($base * 0.5) * $square-root-of-three;
 }
 
 /// Arrow mixin
@@ -17,7 +17,7 @@
   border-style: solid;
   border-color: transparent; // 1
 
-  $perpendicular: $base / 2;
+  $perpendicular: $base * 0.5;
 
   @if ($height == null) {
 	$height: _equilateral-height($base);
@@ -291,7 +291,7 @@
 		&:link,
 		&:visited {
 			text-decoration: underline;
-			text-decoration-thickness: $header-link-underline-thickness / 2;
+			text-decoration-thickness: $header-link-underline-thickness * 0.5;
 			text-underline-offset: spacing(1);
 		}
 		&:hover {
@@ -310,7 +310,7 @@
 	border-bottom: none;
 
 	@include media-query($until: tablet) {
-		margin-bottom: $gutter / 2 !important;
+		margin-bottom: $gutter * 0.5 !important;
 	}
 }
 
