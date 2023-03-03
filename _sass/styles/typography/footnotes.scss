@@ -1,0 +1,81 @@
+sup[role="doc-noteref"] {
+	display: inline;
+		
+	background: $footnote-background;
+	
+	border-radius: 100%;
+	aspect-ratio: 1;
+	width: 18px;
+	height: 18px;
+	font-size: 16px;
+	line-height: 18px;
+	text-align: center;
+}
+
+sup[role="doc-noteref"] a {
+	display: inline-block;
+	aspect-ratio: 1;
+	font-weight: bold;
+	width: 18px;
+	height: 18px;
+	font-size: 16px;
+	line-height: 18px;
+	
+  &:link {
+		color: $footnote-color;
+		text-decoration: none;
+  }
+
+  &:visited {
+		color: $footnote-color;
+  }
+
+  &:hover {
+		background: $footnote-background--hover;
+		color: $footnote-color--hover;
+  }
+
+  &:active {
+		color: $link-color--active;
+  }
+
+  // When focussed, the text color needs to be darker to ensure that color
+  // contrast is still acceptable
+  &:focus {
+		color: $link-color--focus;
+  }
+	
+	&:hover:focus {
+		background: $footnote-background--hover;
+		color: $footnote-color--hover !important;
+	}
+}
+
+div.footnotes {
+	@include responsive-margin(6, "top");
+	@include responsive-padding(6, "top");
+	border-top: 3px solid $border-color;
+}
+
+div.footnotes:before {
+	display: block;
+	content: "Footnotes";
+	@extend %body-md;
+	font-weight: bold;
+	left: 0;
+}
+
+div.footnotes ol {
+	@include responsive-margin(6, "bottom");
+	margin-top: 0;
+	padding-top: 0;
+}
+
+div.footnotes ol * {
+	max-width: 60ch;
+	@extend %body-sm;
+}
+
+div.footnotes ol li::before {
+	font-weight: bold;	
+}
