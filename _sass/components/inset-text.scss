@@ -1,15 +1,21 @@
 blockquote {
+	
+	position: relative;
 	@include font($size: 19);
 	color: $text-color;
-	padding: spacing(1) 0 spacing(1) spacing(3);
+	padding: spacing(2) spacing(4) spacing(2) 0;
 	// Margin top intended to collapse
 	// This adds an additional 10px to the paragraph above
 	@include responsive-margin(6, "top");
 	@include responsive-margin(6, "bottom");
-
-	clear: both;
-
-	border-left: $border-width-wide solid color("deep-purple");
+	@include responsive-padding(4, "right");
+	@include responsive-padding(4, "left");
+	@include responsive-padding(4, "top");
+	@include responsive-padding(4, "bottom");
+	
+	border-left: $border-width-wide color("dark-purple") solid;
+	background: color("dark-purple-10");
+	
 	> :first-child {
 		margin-top: 0;
 	}

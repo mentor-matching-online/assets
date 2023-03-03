@@ -59,8 +59,8 @@ $colors: (
   "link": #2b57ab,
   "link-hover": #7592c8,
   "link-visited": #7c1389,
-  "button": #2b57ab,
-  "button-hover": #214282,
+  "button": #5f2db4,
+  "button-hover": #3e1d78,
   "success": #00b95d,
   "success--dark": #009049,
   "success-light": #bfedd6,
@@ -80,6 +80,7 @@ $colors: (
   "dark-purple-40": #b6b2bb,
   "dark-purple-30": #cbc9cd,
   "dark-purple-20": #e2e0e1,
+  "dark-purple-10": #f7f6f6,
   
   "deep-bright-purple": #3e1d78,
   "dark-bright-purple": #4c238f,
@@ -191,9 +192,9 @@ $border-color: color("gray-4");
 // Button colors
 // =========================================================
 
-$button-color: color("green");
-$button-hover-color: darken($button-color, 10%);
-$button-shadow-color: darken($button-color, 50%);
+$button-color: color("button");
+$button-hover-color: color("button-hover");
+$button-shadow-color: darken(color("button-hover"), 50%);
 $button-text-color: color("white");
 
 // Secondary button variables

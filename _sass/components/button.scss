@@ -98,6 +98,9 @@
 .button {
 	@extend %button;
 }
+.button--no-margin {
+	margin-bottom: 0 !important;
+}
 
 .button-group > .button {
 	@include media-query($from: tablet) {
