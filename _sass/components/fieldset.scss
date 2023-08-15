@@ -25,7 +25,7 @@ fieldset,
 }
 
 legend {
-	@extend %heading-md;
+	@extend %label-md;
 
 	// Fix legend text wrapping in Edge and IE
 	// 1. IE9-11 & Edge 12-13
